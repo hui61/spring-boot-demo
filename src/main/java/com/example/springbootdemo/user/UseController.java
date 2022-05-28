@@ -1,8 +1,14 @@
 package com.example.springbootdemo.user;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-@RequestMapping
+@RestController
+@RequestMapping("/users")
 public class UseController {
+    @GetMapping
+    public String getUser() {
+        return "hello world";
+    }
 }
