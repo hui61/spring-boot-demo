@@ -15,11 +15,16 @@ services:
       - "5005:5005"
     command: ./gradlew bootRun
     depends_on:
-      - mysql_base
+      - db
 
-  mysql_base:
+  db:
     image: mysql:5
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
+      MYSQL_DATABASE: spring_boot_demo
       MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./src/main/resources/db/schema/create_user.sql:/docker-entrypoint-initdb.d/init.sql"

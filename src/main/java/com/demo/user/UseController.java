@@ -1,4 +1,4 @@
-package com.example.springbootdemo.user;
+package com.demo.user;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
