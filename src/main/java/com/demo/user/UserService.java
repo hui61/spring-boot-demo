@@ -1,15 +1,15 @@
 package com.demo.user;
 
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 @Service
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class UserService {
     @Resource
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public User getUser(Integer id) {
         return userRepository.getReferenceById(id);
